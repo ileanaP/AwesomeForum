@@ -10,7 +10,7 @@ namespace AweForum.Models
     public class Forum : IModelBase
     {
         public int Id { get; set; }
-        public int Name { get; set; }
+        public string Name { get; set; }
         public int ThreadCount { get; set; }
         public int OrderNr { get; set; }
         public int CategoryId { get; set; }

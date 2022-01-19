@@ -39,13 +39,13 @@ namespace AweForum.Data
             base.OnModelCreating(builder);
         }
 
-        public DbSet<Category> Category { get; set; }
-        public DbSet<Forum> Forum { get; set; }
-        public DbSet<Message_Reaction> MessageReaction { get; set; }
-        public DbSet<Reaction> Reaction { get; set; }
-        public DbSet<Thread> Thread { get; set; }
-        public DbSet<ThreadMessage> ThreadMessage { get; set; }
-        public DbSet<User_Reaction> UserReaction { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Forum> Forums { get; set; }
+        public DbSet<Message_Reaction> MessageReactions { get; set; }
+        public DbSet<Reaction> Reactions { get; set; }
+        public DbSet<Thread> Threads { get; set; }
+        public DbSet<ThreadMessage> ThreadMessages { get; set; }
+        public DbSet<User_Reaction> UserReactions { get; set; }
 
     }
 }

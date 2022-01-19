@@ -16,7 +16,7 @@ namespace AweForum.Models
         public int ReactionId { get; set; }
         [ForeignKey(nameof(ReactionId))]
         public Reaction Reaction { get; set; }
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         [ForeignKey(nameof(UserId))]
         public AppUser User { get; set; }
     }
