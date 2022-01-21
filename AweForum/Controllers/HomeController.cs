@@ -1,4 +1,5 @@
-﻿using AweForum.Models;
+﻿using AweForum.Data.Services;
+using AweForum.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,15 +13,18 @@ namespace AweForum.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private ICategoriesService _categoriesService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ICategoriesService categoriesService)
         {
             _logger = logger;
+            _categoriesService = categoriesService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var categories = await _categoriesService.GetAllWithCategoryAsync(); 
+            return View(categories);
         }
 
         public IActionResult Privacy()

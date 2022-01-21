@@ -1,4 +1,5 @@
 using AweForum.Data;
+using AweForum.Data.Services;
 using AweForum.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
@@ -29,6 +30,11 @@ namespace AweForum
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnectionString")));
+
+            #region CustomServices
+            services.AddScoped<IForumsService, ForumsService>();
+            services.AddScoped<ICategoriesService, CategoriesService>();
+            #endregion
 
             #region Auth
             services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();

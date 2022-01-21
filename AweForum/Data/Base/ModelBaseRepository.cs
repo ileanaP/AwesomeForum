@@ -7,8 +7,12 @@ using System.Threading.Tasks;
 namespace AweForum.Data.Base
 {
     public class ModelBaseRepository<T> : IModelBaseRepository<T> where T : class, IModelBase, new()
-
     {
+        private AppDbContext _context;
+        public ModelBaseRepository(AppDbContext context)
+        {
+            _context = context;
+        }
         Task IModelBaseRepository<T>.AddAsync(T entity)
         {
             throw new NotImplementedException();

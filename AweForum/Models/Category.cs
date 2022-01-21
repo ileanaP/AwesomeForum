@@ -13,6 +13,7 @@ namespace AweForum.Models
         public int Id { get; set;  }
         public string Name { get; set; }
         public int OrderNr { get; set; }
+        public List<Forum> Forums { get; set; }
         public List<Message_Reaction> Message_Reactions { get; set; }
     }
 }
