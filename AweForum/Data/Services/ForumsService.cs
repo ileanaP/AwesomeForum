@@ -16,11 +16,12 @@ namespace AweForum.Data.Services
             _context = context;
         }
 
-        /*public async Task<List<Forum>> GetAllWithCategoryAsync()
+        public async Task<Forum> GetByIdWithThreadsAsync(int id)
         {
-            var forums = await _context.Forums.Include(n => n.Category).ToListAsync();
+            var forum = await _context.Forums.Include(f => f.Threads)
+                .FirstOrDefaultAsync(f => f.Id == id);
 
-            return forums;
-        }*/
+            return forum;
+        }
     }
 }

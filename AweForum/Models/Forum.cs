@@ -12,6 +12,7 @@ namespace AweForum.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public int ThreadCount { get; set; }
+        public List<Thread> Threads { get; set; }
         public int OrderNr { get; set; }
         public int CategoryId { get; set; }
         [ForeignKey(nameof(CategoryId))]

@@ -2,7 +2,7 @@
 @{
     ViewData["Title"] = "Awesome Forum - Home";
 }
-<div class="row">
+<div class="row container-content">
     <div class="col-md-10 offset-1">
         <div class="bs-component">
             <table class="table listing-table">
@@ -18,7 +18,7 @@
                         {
                             <tr>
                                 <td>
-                                    <a href="#">@forum.Name</a>
+                                    <a asp-controller="Forum" asp-action="Details" asp-route-id="@forum.Id">@forum.Name</a>
                                 </td>
                             </tr>
                         }

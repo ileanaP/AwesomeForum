@@ -9,6 +9,6 @@ namespace AweForum.Data.Services
 {
     public interface IForumsService : IModelBaseRepository<Forum>
     {
-        /*Task<List<Forum>> GetAllWithCategoryAsync();*/
+        Task<Forum> GetByIdWithThreadsAsync(int id);
     }
 }

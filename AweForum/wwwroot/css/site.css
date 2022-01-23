@@ -28,6 +28,7 @@ a {
 -------------------------------------------------- */
 html {
   font-size: 14px;
+  width: 100vw;
 }
 @media (min-width: 768px) {
   html {
@@ -101,4 +102,23 @@ navbar .nav-link {
 
 navbar .nav-link:hover {
     font-weight: bold;
+}
+
+.main {
+    position: relative;
+}
+
+.btn-info.btn-new {
+    background-color: #3bd1b3;
+    position:absolute;
+    top:0;
+    right:0;
+}
+
+.btn-info.btn-new:hover {
+    background-color: #35BCA1;
+}
+
+.container-content {
+    margin-top: 50px;
 }
