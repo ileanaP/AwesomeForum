@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace AweForum.Data.Services
 {
-    public interface IForumsService : IModelBaseRepository<Forum>
+    public interface ITopicMessagesService : IModelBaseRepository<TopicMessage>
     {
-        Task<Forum> GetByIdWithTopicAsync(int id);
     }
 }

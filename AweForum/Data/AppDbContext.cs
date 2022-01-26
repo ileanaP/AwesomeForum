@@ -22,7 +22,7 @@ namespace AweForum.Data
                 mr.ReactionId
             });
             
-            builder.Entity<Message_Reaction>().HasOne(m => m.ThreadMessage).WithMany(mr => mr.Message_Reactions).HasForeignKey(m => m.MessageId);
+            builder.Entity<Message_Reaction>().HasOne(m => m.TopicMessage).WithMany(mr => mr.Message_Reactions).HasForeignKey(m => m.MessageId);
             builder.Entity<Message_Reaction>().HasOne(m => m.Reaction).WithMany(mr => mr.Message_Reactions).HasForeignKey(m => m.ReactionId);
 
             builder.Entity<User_Reaction>().HasKey(ur => new
@@ -32,7 +32,7 @@ namespace AweForum.Data
                 ur.UserId
             });
 
-            builder.Entity<User_Reaction>().HasOne(m => m.ThreadMessage).WithMany(ur => ur.User_Reactions).HasForeignKey(m => m.MessageId);
+            builder.Entity<User_Reaction>().HasOne(m => m.TopicMessage).WithMany(ur => ur.User_Reactions).HasForeignKey(m => m.MessageId);
             builder.Entity<User_Reaction>().HasOne(m => m.Reaction).WithMany(ur => ur.User_Reactions).HasForeignKey(m => m.ReactionId);
             builder.Entity<User_Reaction>().HasOne(m => m.User).WithMany(ur => ur.User_Reactions).HasForeignKey(m => m.UserId);
 
@@ -43,8 +43,8 @@ namespace AweForum.Data
         public DbSet<Forum> Forums { get; set; }
         public DbSet<Message_Reaction> MessageReactions { get; set; }
         public DbSet<Reaction> Reactions { get; set; }
-        public DbSet<Thread> Threads { get; set; }
-        public DbSet<ThreadMessage> ThreadMessages { get; set; }
+        public DbSet<Topic> Topics { get; set; }
+        public DbSet<TopicMessage> TopicMessages { get; set; }
         public DbSet<User_Reaction> UserReactions { get; set; }
 
     }

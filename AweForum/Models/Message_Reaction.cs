@@ -12,7 +12,7 @@ namespace AweForum.Models
         public int Id { get; set; }
         public int MessageId { get; set; }
         [ForeignKey(nameof(MessageId))]
-        public ThreadMessage ThreadMessage { get; set; }
+        public TopicMessage TopicMessage { get; set; }
         public int ReactionId { get; set; }
         [ForeignKey(nameof(ReactionId))]
         public Reaction Reaction { get; set; }

@@ -1,13 +1,14 @@
 ﻿@model Forum
 @{
     ViewData["Title"] = Model.Name + " - Forum";
+    string[] btnNewParams = { "Topic", Model.Id.ToString()};
 }
-@await Html.PartialAsync("_AddNewButton", "Thread")
+@await Html.PartialAsync("_AddNewButton", btnNewParams)
 <div class="row container-content">
-    @if (Model.ThreadCount == 1)
+    @if (Model.TopicCount == 1)
     {
         <div class="col col-md-6 offset-3">
-            <h1 class="text-info">This forum has no threads yet</h1>
+            <h1 class="text-info">This forum has no topics yet</h1>
             <hr />
         </div>
     }
@@ -18,7 +19,7 @@
 
                 <thead>
                     <tr>
-                        <th>TestCat</th>
+                        <th>@Model.Name</th>
                     </tr>
                 </thead>
                 <tbody>

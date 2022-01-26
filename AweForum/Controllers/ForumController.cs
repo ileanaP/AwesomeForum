@@ -18,7 +18,7 @@ namespace AweForum.Controllers
 
         public async Task<IActionResult> Details(int id)
         {
-            var forum = await _forumService.GetByIdWithThreadsAsync(id);
+            var forum = await _forumService.GetByIdWithTopicAsync(id);
             return View(forum);
         }
     }

@@ -16,9 +16,9 @@ namespace AweForum.Data.Services
             _context = context;
         }
 
-        public async Task<Forum> GetByIdWithThreadsAsync(int id)
+        public async Task<Forum> GetByIdWithTopicAsync(int id)
         {
-            var forum = await _context.Forums.Include(f => f.Threads)
+            var forum = await _context.Forums.Include(f => f.Topics)
                 .FirstOrDefaultAsync(f => f.Id == id);
 
             return forum;

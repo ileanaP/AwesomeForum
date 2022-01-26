@@ -7,8 +7,13 @@ using System.Threading.Tasks;
 
 namespace AweForum.Models
 {
-    public class Thread : IModelBase
+    public class Topic : IModelBase
     {
+        public Topic()
+        {
+            Active = true;
+            MessageCount = 1;
+        }
         public int Id { get; set; }
         public string Name { get; set; }
         public string CreatorId { get; set; }

@@ -49,8 +49,6 @@ namespace AweForum.Data
 
                     context.Categories.AddRange(categoriesObj);
                     context.SaveChanges();
-
-                    var x = 2;
                 }
                 #endregion
 
@@ -62,77 +60,77 @@ namespace AweForum.Data
                         new Forum()
                         {
                             Name= "Rules and announcements",
-                            ThreadCount = 0,
+                            TopicCount = 0,
                             OrderNr = 1,
                             CategoryId = 13
                         },
                         new Forum()
                         {
                             Name= "Welcome",
-                            ThreadCount = 0,
+                            TopicCount = 0,
                             OrderNr = 2,
                             CategoryId = 13
                         },
                         new Forum()
                         {
                             Name= "LGBTQ+",
-                            ThreadCount = 0,
+                            TopicCount = 0,
                             OrderNr = 1,
                             CategoryId = 14
                         },
                         new Forum()
                         {
                             Name= "Food",
-                            ThreadCount = 0,
+                            TopicCount = 0,
                             OrderNr = 2,
                             CategoryId = 14
                         },
                         new Forum()
                         {
                             Name= "Vintage Fashion",
-                            ThreadCount = 0,
+                            TopicCount = 0,
                             OrderNr = 3,
                             CategoryId = 14
                         },
                         new Forum()
                         {
                             Name= "Current Trends",
-                            ThreadCount = 0,
+                            TopicCount = 0,
                             OrderNr = 4,
                             CategoryId = 14
                         },
                         new Forum()
                         {
                             Name= "Music",
-                            ThreadCount = 0,
+                            TopicCount = 0,
                             OrderNr = 1,
                             CategoryId = 15
                         },
                         new Forum()
                         {
                             Name= "Cinema & TV",
-                            ThreadCount = 0,
+                            TopicCount = 0,
                             OrderNr = 2,
                             CategoryId = 15
                         },
                         new Forum()
                         {
                             Name= "Art & Hobby",
-                            ThreadCount = 0,
+                            TopicCount = 0,
                             OrderNr = 3,
                             CategoryId = 15
                         },
                         new Forum()
                         {
                             Name= "Archive",
-                            ThreadCount = 0,
+                            TopicCount = 0,
                             OrderNr = 1,
                             CategoryId = 16
                         },
                         new Forum()
                         {
                             Name= "Recycle Bin",
-                            ThreadCount = 0,
+                            TopicCount = 0,
                             OrderNr = 2,
                             CategoryId = 16
                         }

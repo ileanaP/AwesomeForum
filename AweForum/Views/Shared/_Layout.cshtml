@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity;
+@inject UserManager<AppUser> UserManager;
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -27,6 +30,18 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                        <li class="nav-item float-right">
+                            @if (!User.Identity.IsAuthenticated)
+                            {
+                                <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Login">Log In</a>
+                                <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Login">Register</a>
+                            }
+                            else
+                            {
+                                <p>Hello, @UserManager.GetUserName(User)</p>
+                                <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Logout">Log Out</a>
+                            }
                         </li>
                     </ul>
                 </div>

@@ -34,6 +34,8 @@ namespace AweForum
             #region CustomServices
             services.AddScoped<IForumsService, ForumsService>();
             services.AddScoped<ICategoriesService, CategoriesService>();
+            services.AddScoped<ITopicsService, TopicsService>();
+            services.AddScoped<ITopicMessagesService, TopicMessagesService>();
             #endregion
 
             #region Auth
@@ -66,7 +68,9 @@ namespace AweForum
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseSession();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
